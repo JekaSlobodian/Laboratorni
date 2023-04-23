@@ -18,4 +18,7 @@ s = pow(a,2)+pow(b,2);
 d =(a+b)*(a-b);
 printf("a \t b \t g \t s\t d\t \n");
 printf("%d\t%d\t%d\t%d\t%d",a,b,g,s,d);
+  printf("\n Ділення першого числа на друге g= %d \t" , g );
+  printf("\n Сума квадратів s= %d \t" , s );
+  printf("\n Добуток  d= %d \t" , d);
 return 0;}

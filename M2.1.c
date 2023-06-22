@@ -1,46 +1,44 @@
 #include <stdio.h>
 
-// Функція для обчислення суми елементів масиву з непарними індексами
-double computeSumWithOddIndices(double array[], int size) {
-    double sum = 0;
-    for (int i = 0; i < size; i++) {
+#define MAX_SIZE 100
+
+void inputArray(int arr[], int n) {
+    printf("Введіть %d елементів масиву:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+}
+
+void outputArray(int arr[], int n) {
+    printf("Елементи масиву: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int computeSum(int arr[], int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
         if (i % 2 != 0) {
-            sum += array[i];
+            sum += arr[i];
         }
     }
     return sum;
 }
 
-// Функція для введення елементів масиву
-void inputArray(double array[], int size) {
-    printf("Введіть елементи масиву:\n");
-    for (int i = 0; i < size; i++) {
-        scanf("%lf", &array[i]);
-    }
-}
-
-// Функція для виведення елементів масиву
-void printArray(double array[], int size) {
-    printf("Масив: ");
-    for (int i = 0; i < size; i++) {
-        printf("%lf ", array[i]);
-    }
-    printf("\n");
-}
-
 int main() {
     int n;
-    printf("Введіть розмір масиву: ");
+    int arr[MAX_SIZE];
+
+    printf("Введіть розмір масиву (n): ");
     scanf("%d", &n);
 
-    double array[n];
+    inputArray(arr, n);
+    outputArray(arr, n);
 
-    inputArray(array, n);
-    printArray(array, n);
-
-    double sum = computeSumWithOddIndices(array, n);
-
-    printf("Сума елементів з непарними індексами: %lf\n", sum);
+    int sum = computeSum(arr, n);
+    printf("Сума елементів масиву з непарними індексами: %d \n", sum);
 
     return 0;
 }

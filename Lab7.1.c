@@ -43,16 +43,22 @@ int main() {
     printf("Введіть елементи матриці A:\n");
     inputMatrix(matrixA, n, m);
 
+    printf("Матриця A:\n");
+    outputMatrix(matrixA, n, m);
+
     printf("Введіть елементи матриці B:\n");
     inputMatrix(matrixB, n, m);
+
+    printf("Матриця B:\n");
+    outputMatrix(matrixB, n, m);
 
     float minA = minarr(matrixA[0], n * m);
     float minB = minarr(matrixB[0], n * m);
 
     if (minA < minB) {
-        printf("Мінімальний елемент у матриці A є найбільшим: %.2f\n", minA);
-    } else if (minB < minA) {
         printf("Мінімальний елемент у матриці B є найбільшим: %.2f\n", minB);
+    } else if (minB < minA) {
+        printf("Мінімальний елемент у матриці A є найбільшим: %.2f\n", minA);
     } else {
         printf("Мінімальний елемент у матрицях A та B однаковий: %.2f\n", minA);
     }
